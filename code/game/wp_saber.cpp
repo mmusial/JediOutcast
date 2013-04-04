@@ -1752,7 +1752,8 @@ void WP_SaberDamageAdd( float trDmg, int trVictimEntityNum, vec3_t trDmgDir, vec
 	}
 	if ( trDmg )
 	{//did some damage to something
-		for ( int i = 0; i < numVictims; i++ )
+		int i = 0;
+		for ( ; i < numVictims; i++ )
 		{
 			if ( victimEntityNum[i] == trVictimEntityNum )
 			{//already hit this guy before

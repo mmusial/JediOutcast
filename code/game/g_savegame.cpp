@@ -805,7 +805,7 @@ static void WriteGEntities(qboolean qbAutosave)
 
 	gi.AppendToSaveGame('NMED', &iCount, sizeof(iCount));
 
-	for (i=0; i<(qbAutosave?1:globals.num_entities); i++)
+	for (int i=0; i<(qbAutosave?1:globals.num_entities); i++)
 	{
 		gentity_t* ent = &g_entities[i];
 

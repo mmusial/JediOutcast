@@ -361,11 +361,20 @@ int			G2API_InitGhoul2Model(CGhoul2Info_v &ghoul2, const char *fileName, int mod
 	return G2API_InitGhoul2Model_(ghoul2, fileName, modelIndex, customSkin, customShader, modelFlags, lodBias);
 }
 qboolean	(*G2API_SetSkin)(CGhoul2Info *ghlInfo, qhandle_t customSkin, qhandle_t renderSkin /*= 0*/ );
-qboolean	(*G2API_SetBoneAnim)(CGhoul2Info *ghlInfo, const char *boneName, const int startFrame, const int endFrame,
+qboolean	(*G2API_SetBoneAnim_)(CGhoul2Info *ghlInfo, const char *boneName, const int startFrame, const int endFrame,
 							  const int flags, const float animSpeed, const int currentTime, const float setFrame /*= -1*/, const int blendTime /*= -1*/);
-qboolean	(*G2API_SetBoneAngles)(CGhoul2Info *ghlInfo, const char *boneName, const vec3_t angles,
+qboolean	G2API_SetBoneAnim(CGhoul2Info *ghlInfo, const char *boneName, const int startFrame, const int endFrame,
+							  const int flags, const float animSpeed, const int currentTime, const float setFrame = -1, const int blendTime = -1) {
+	return G2API_SetBoneAnim_(ghlInfo, boneName, startFrame, endFrame, flags, animSpeed, currentTime, setFrame, blendTime);
+}
+qboolean	(*G2API_SetBoneAngles_)(CGhoul2Info *ghlInfo, const char *boneName, const vec3_t angles,
 								   const int flags, const Eorientations up, const Eorientations right, const Eorientations forward,
 								   qhandle_t *modelList, int blendTime /*= 0*/, int blendStart /*= 0*/);
+qboolean	G2API_SetBoneAngles(CGhoul2Info *ghlInfo, const char *boneName, const vec3_t angles,
+								   const int flags, const Eorientations up, const Eorientations right, const Eorientations forward,
+								   qhandle_t *modelList, int blendTime = 0, int blendStart = 0) {
+	return G2API_SetBoneAngles_(ghlInfo, boneName, angles, flags, up, right, forward, modelList, blendTime, blendStart);
+}
 qboolean	(*G2API_SetBoneAnglesIndex_)(CGhoul2Info *ghlInfo, const int index, const vec3_t angles, const int flags,
 							 const Eorientations yaw, const Eorientations pitch, const Eorientations roll,
 							 qhandle_t *modelList, int blendTime /*= 0*/, int currentTime /*= 0*/);
