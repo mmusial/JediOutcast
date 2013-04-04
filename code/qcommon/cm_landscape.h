@@ -5,7 +5,7 @@
 #include <list>
 #pragma warning (pop)
 
-using namespace std;
+;
 
 // These are the root classes using data shared in both the server and the renderer.
 // This common data is also available to physics

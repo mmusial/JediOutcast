@@ -31,7 +31,7 @@
 #include <set>
 #include <string>
 #include <vector>
-using namespace std;
+;
 
 typedef vector<string>	vStrings_t;
 typedef vector<int>		vInts_t;

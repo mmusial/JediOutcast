@@ -65,7 +65,7 @@ int SG_Seek( fileHandle_t fhSaveGame, long offset, int origin );
 
 #include <map>
 
-using namespace std;
+;
 
 static char	saveGameComment[iSG_COMMENT_SIZE];
 

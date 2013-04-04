@@ -25,7 +25,7 @@
 #include "stringed_ingame.h"
 
 #include <string>
-using namespace std;
+;
 
 #ifdef _STRINGED
 #include <stdlib.h>

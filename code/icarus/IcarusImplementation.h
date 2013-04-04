@@ -16,7 +16,7 @@
 #include <algorithm>
 #pragma warning (pop)
 #pragma warning (disable:4503)		// decorated name length xceeded, name was truncated
-using namespace std;
+;
 
 
 class CSequence;

@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <map>
 
-using namespace std;
+;
 
 #if MEM_DEBUG
 #include "..\smartheap\heapagnt.h"

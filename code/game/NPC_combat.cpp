@@ -2702,7 +2702,7 @@ NPC_CollectCombatPoints
 -------------------------
 */
 
-typedef	map< float, int >	combatPoint_m;
+typedef	std::map< float, int >	combatPoint_m;
 
 static int NPC_CollectCombatPoints( const vec3_t origin, const float radius, combatPoint_m &points, const int flags )
 {
