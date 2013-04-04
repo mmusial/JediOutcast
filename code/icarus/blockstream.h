@@ -92,7 +92,7 @@ protected:
 
 class CBlock
 {
-	typedef vector< CBlockMember * >	blockMember_v;
+	typedef std::vector< CBlockMember * >	blockMember_v;
 
 public:
 
