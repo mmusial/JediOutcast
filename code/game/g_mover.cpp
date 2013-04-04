@@ -393,7 +393,7 @@ qboolean G_MoverPush( gentity_t *pusher, vec3_t move, vec3_t amove, gentity_t **
 
 		if ( ((pusher->spawnflags&2)&&!Q_stricmp("func_breakable",pusher->classname))
 			||((pusher->spawnflags&16)&&!Q_stricmp("func_static",pusher->classname)) )
-		{//ugh, avoid stricmp with a unique flag
+		{//ugh, avoid _stricmp with a unique flag
 			//Damage on impact
 			if ( pusher->damage )
 			{//Do damage
@@ -404,7 +404,7 @@ qboolean G_MoverPush( gentity_t *pusher, vec3_t move, vec3_t amove, gentity_t **
 				}
 			}
 		}
-		// really need a flag like MOVER_TOUCH that calls the ent's touch function here, instead of this stricmp crap
+		// really need a flag like MOVER_TOUCH that calls the ent's touch function here, instead of this _stricmp crap
 		else if ( (pusher->spawnflags&2) && !Q_stricmp( "func_rotating", pusher->classname ) )
 		{
 			GEntity_TouchFunc( pusher, check, NULL );

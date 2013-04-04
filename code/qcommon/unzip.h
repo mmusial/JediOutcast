@@ -122,7 +122,7 @@ extern int unzStringFileNameCompare (const char* fileName1, const char* fileName
 /*
    Compare two filename (fileName1,fileName2).
    If iCaseSenisivity = 1, comparision is case sensitivity (like strcmp)
-   If iCaseSenisivity = 2, comparision is not case sensitivity (like strcmpi
+   If iCaseSenisivity = 2, comparision is not case sensitivity (like _strcmpi
 								or strcasecmp)
    If iCaseSenisivity = 0, case sensitivity is defaut of your operating system
 	(like 1 on Unix, 2 on Windows)
