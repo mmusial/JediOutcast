@@ -15,11 +15,11 @@ protected:
 	int			mPriority;		// sequence in which objectives need to be completed
 	int			mOrderIndex;	// objective index in ui
 	int			mCompleteSoundID; // sound for when objective is finished
-	string		mMessage;		// message outputed when objective is completed
-	string		mDescription;	// description of objective
-	string		mInfo;			// more info for objective
-	string		mName;			// name of objective
-	string		mTrigger;		// trigger associated with objective
+	std::string		mMessage;		// message outputed when objective is completed
+	std::string		mDescription;	// description of objective
+	std::string		mInfo;			// more info for objective
+	std::string		mName;			// name of objective
+	std::string		mTrigger;		// trigger associated with objective
 
 public:
 	
@@ -58,8 +58,8 @@ private:
 //	CTriggerAriocheObjective*		FindRandomTrigger		( );
 };
 
-typedef list<CRMObjective *>::iterator	rmObjectiveIter_t;
-typedef list<CRMObjective *>			rmObjectiveList_t;
+typedef std::list<CRMObjective *>::iterator	rmObjectiveIter_t;
+typedef std::list<CRMObjective *>			rmObjectiveList_t;
 
 
 #endif

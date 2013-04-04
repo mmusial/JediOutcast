@@ -42,7 +42,7 @@ class CRMNode
 {
 private:
 
-	string			mName;					// name of node - "" if not used yet
+	std::string		mName;					// name of node - "" if not used yet
 	vec3_t			mPos;					// where node is
 	int				mPathID[DIR_MAX]; 		// path id's that lead from this node
 	bool			mAreaPointPlaced;		// false if no area point here yet.
@@ -69,14 +69,14 @@ public:
 	int			GetFlattenHeight() {return mFlattenHeight; }
 };
 
-typedef vector<CRMNode*>	 	rmNodeVector_t;
+typedef std::vector<CRMNode*>	 	rmNodeVector_t;
 
 // named spots on the map, should be placed into nodes
 class CRMLoc
 {
 private:
 
-	string			mName;		// name of location
+	std::string		mName;		// name of location
 	int				mMinDepth;
 	int				mMaxDepth;
 	int				mMinPaths;
@@ -107,7 +107,7 @@ public:
 	void		SetPlaced(bool p) { mPlaced = p;};
 };
 
-typedef vector<CRMLoc*> 	rmLocVector_t;
+typedef std::vector<CRMLoc*> 	rmLocVector_t;
 
 
 // cells are used for figuring out node connections / paths
@@ -129,7 +129,7 @@ public:
 	void	RemoveWall(const int dir) { wall &= ~(1<<dir); };
 };
 
-typedef vector<CRMCell>			rmCellVector_t;
+typedef std::vector<CRMCell>			rmCellVector_t;
 
 
 class CRMPathManager
@@ -166,7 +166,7 @@ private:
 	float			mRiverBedDepth;
 	float			mRiverDeviation;
 	float			mRiverBreadth;
-	string			mRiverBridge;
+	std::string		mRiverBridge;
 	vec3_t			mRiverPos;
 
 	static int neighbor_x[DIR_MAX];

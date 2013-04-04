@@ -9,7 +9,7 @@
 // maximum random choices
 #define MAX_RANDOM_CHOICES 100
 
-typedef vector<int> 	rmIntVector_t;
+typedef std::vector<int> 	rmIntVector_t;
 
 
 class CRMMission
@@ -44,9 +44,9 @@ private:
 	float					mPickupWeapon;
 	float					mPickupEquipment;
 
-	string					mDescription;
-	string					mExitScreen;
-	string					mTimeExpiredScreen;
+	std::string				mDescription;
+	std::string				mExitScreen;
+	std::string				mTimeExpiredScreen;
 
 	// symmetric landscape style
 	symmetry_t				mSymmetric;

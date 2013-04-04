@@ -1103,7 +1103,7 @@ static void ReadGEntities(qboolean qbAutosave)
 		// now zap any g_ents that were inuse when the level was loaded, but are no longer in use in the saved version
 		//	that we've just loaded...
 		//
-		for (i=iPreviousEntRead+1; i<globals.num_entities; i++)
+		for (int i=iPreviousEntRead+1; i<globals.num_entities; i++)
 		{
 			if ( g_entities[i].inuse )	// not actually necessary
 			{

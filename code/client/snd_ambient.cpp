@@ -40,7 +40,7 @@ static int		parsePos		= 0;
 static char	tempBuffer[1024];
 
 //NOTENOTE: Be sure to change the mirrored code in g_spawn.cpp, and cg_main.cpp
-typedef	map<sstring_t, unsigned char>	namePrecache_m;
+typedef	std::map<sstring_t, unsigned char>	namePrecache_m;
 static namePrecache_m*	pMap = NULL;
 
 // Used for enum / string matching
@@ -155,7 +155,7 @@ GetSet
 
 ambientSet_t *CSetGroup::GetSet( const char *name )
 {
-	map<sstring_t, ambientSet_t *>::iterator	mi;
+	std::map<sstring_t, ambientSet_t *>::iterator	mi;
 
 	if ( name == NULL )
 		return NULL;

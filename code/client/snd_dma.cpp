@@ -2605,7 +2605,7 @@ qboolean S_ScanChannelStarts( void ) {
 // this is now called AFTER the DMA painting, since it's only the painter calls that cause the MP3s to be unpacked,
 //	and therefore to have data readable by the lip-sync volume calc code.
 //
-void S_DoLipSynchs( const s_oldpaintedtime )
+void S_DoLipSynchs( const int s_oldpaintedtime )
 {
 	channel_t		*ch;
 	int				i;
@@ -4527,7 +4527,7 @@ void S_StartBackgroundTrack( const char *intro, const char *loop, qboolean bCall
 			//
 			// default all tracks to OFF first (and set any other vars)
 			//
-			for (i=0; i<eBGRNDTRACK_NUMBEROF; i++)
+			for (int i=0; i<eBGRNDTRACK_NUMBEROF; i++)
 			{
 				tMusic_Info[i].bActive				= qfalse;
 				tMusic_Info[i].bTrackSwitchPending	= qfalse;

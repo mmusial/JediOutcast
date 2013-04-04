@@ -71,7 +71,7 @@ public:
 	bool	IsFlattened		  (){ return mFlatten; }
 };
 
-typedef vector<CRMArea*>			rmAreaVector_t;
+typedef std::vector<CRMArea*>			rmAreaVector_t;
 
 class CRMAreaManager
 {

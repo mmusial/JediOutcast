@@ -24,7 +24,7 @@
 #include "../qcommon/sstring.h"	// #include <string>
 ;
 
-typedef map<sstring_t, const char *>	ShaderEntryPtrs_t;
+typedef std::map<sstring_t, const char *>	ShaderEntryPtrs_t;
 										ShaderEntryPtrs_t ShaderEntryPtrs;
 
 
