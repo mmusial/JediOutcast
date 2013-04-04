@@ -5136,7 +5136,8 @@ int SND_FreeOldestSound(sfx_t *pButNotThisOne /* = NULL */)
 			{
 				// new bit, we can't throw away any sfx_t struct in use by a channel, else the paint code will crash...
 				//
-				for (int iChannel=0; iChannel<MAX_CHANNELS; iChannel++)
+				int iChannel=0;
+				for (; iChannel<MAX_CHANNELS; iChannel++)
 				{
 					channel_t *ch = & s_channels[iChannel];
 

@@ -6,9 +6,6 @@
 #include "../game/genericparser2.h"
 #include "cm_randomterrain.h"
 
-#ifdef _WIN32
-#pragma optimize("p", on)
-#endif
 
 void R_LoadDataImage	( const char *name, byte **pic, int *width, int *height);
 void R_InvertImage		( byte *data, int width, int height, int depth);
@@ -1709,6 +1706,3 @@ CRandomTerrain *CreateRandomTerrain(const char *config, CCMLandScape *landscape,
 
 // end
 
-#ifdef _WIN32
-#pragma optimize("p", off)
-#endif

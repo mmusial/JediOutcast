@@ -17,9 +17,9 @@ class FFSet
 	//	Types
 	//
 public:
-	typedef map<string, CImmProject*> TProject;
-	typedef vector<TProject> TInclude;
-	typedef vector<string> TIncludePath;
+	typedef std::map<std::string, CImmProject*> TProject;
+	typedef std::vector<TProject> TInclude;
+	typedef std::vector<std::string> TIncludePath;
 
 	//
 	//	Variables

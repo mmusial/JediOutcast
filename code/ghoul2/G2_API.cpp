@@ -65,10 +65,10 @@ bool G2_TestModelPointers(CGhoul2Info *ghlInfo);
 #define MAX_ERROR_PRINTS (3)
 class ErrorReporter
 {
-	string mName;
-	map<string,int> mErrors;
+	std::string mName;
+	std::map<std::string,int> mErrors;
 public:
-	ErrorReporter(const string &name) :
+	ErrorReporter(const std::string &name) :
 	  mName(name)
 	{
 	}
@@ -79,7 +79,7 @@ public:
 		sprintf(mess,"****** %s Error Report Begin******\n",mName.c_str());
 		OutputDebugString(mess);
 
-		map<string,int>::iterator i;
+		std::map<std::string,int>::iterator i;
 		for (i=mErrors.begin();i!=mErrors.end();i++)
 		{
 			total+=(*i).second;
@@ -212,7 +212,7 @@ public:
 	{
 		char mess[1000];
 		assert(m);
-		string full=mName;
+		std::string full=mName;
 		if (kind==2)
 		{
 			full+=":NOTE:     ";
@@ -233,11 +233,11 @@ public:
 
 		// assert(0);
 		int ret=0; //place a breakpoint here
-		map<string,int>::iterator f=mErrors.find(full);
+		std::map<std::string,int>::iterator f=mErrors.find(full);
 		if (f==mErrors.end())
 		{
 			ret++; // or a breakpoint here for the first occurance
-			mErrors.insert(pair<string,int>(full,0));
+			mErrors.insert(std::pair<std::string,int>(full,0));
 			f=mErrors.find(full);
 		}
 		assert(f!=mErrors.end());
@@ -338,9 +338,9 @@ void RemoveBoneCache(CBoneCache *boneCache);
 
 class Ghoul2InfoArray : public IGhoul2InfoArray
 {
-	vector<CGhoul2Info>	mInfos[MAX_G2_MODELS];
+	std::vector<CGhoul2Info>	mInfos[MAX_G2_MODELS];
 	int					mIds[MAX_G2_MODELS];
-	list<int>			mFreeIndecies;
+	std::list<int>			mFreeIndecies;
 	void DeleteLow(int idx)
 	{
 		{
@@ -386,7 +386,7 @@ public:
 			int i;
 			for (i=0;i<MAX_G2_MODELS;i++)
 			{
-				list<int>::iterator j;
+				std::list<int>::iterator j;
 				for (j=mFreeIndecies.begin();j!=mFreeIndecies.end();j++)
 				{
 					if (*j==i)
@@ -477,9 +477,9 @@ public:
 			DeleteLow(handle&G2_INDEX_MASK);
 		}
 	}
-	vector<CGhoul2Info> &Get(int handle)
+	std::vector<CGhoul2Info> &Get(int handle)
 	{
-		static vector<CGhoul2Info> null;
+		static std::vector<CGhoul2Info> null;
 		assert(handle>0); //null handle
 		assert((handle&G2_INDEX_MASK)>=0&&(handle&G2_INDEX_MASK)<MAX_G2_MODELS); //junk handle
 		assert(mIds[handle&G2_INDEX_MASK]==handle); // not a valid handle, could be old or garbage
@@ -490,7 +490,7 @@ public:
 		}
 		return mInfos[handle&G2_INDEX_MASK];
 	}
-	const vector<CGhoul2Info> &Get(int handle) const
+	const std::vector<CGhoul2Info> &Get(int handle) const
 	{
 		assert(handle>0);
 		assert(mIds[handle&G2_INDEX_MASK]==handle); // not a valid handle, could be old or garbage
@@ -498,12 +498,12 @@ public:
 	}
 
 #if G2API_DEBUG
-	vector<CGhoul2Info> &GetDebug(int handle)
+	std::vector<CGhoul2Info> &GetDebug(int handle)
 	{
-		static vector<CGhoul2Info> null;
+		static std::vector<CGhoul2Info> null;
 		if (handle<=0||(handle&G2_INDEX_MASK)<0||(handle&G2_INDEX_MASK)>=MAX_G2_MODELS||mIds[handle&G2_INDEX_MASK]!=handle)
 		{
-			return *(vector<CGhoul2Info> *)0; // null reference, intentional
+			return *(std::vector<CGhoul2Info> *)0; // null reference, intentional
 		}
 		return mInfos[handle&G2_INDEX_MASK];
 	}
@@ -512,7 +512,7 @@ public:
 		int j;
 		for (j=0;j<MAX_G2_MODELS;j++)
 		{
-			vector<CGhoul2Info> &ghoul2=mInfos[j];
+			std::vector<CGhoul2Info> &ghoul2=mInfos[j];
 			int i;
 			for (i=0; i<ghoul2.size(); i++)
 			{
@@ -547,7 +547,7 @@ void Ghoul2InfoArray_Reset(void)
 #endif
 
 #if G2API_DEBUG
-vector<CGhoul2Info> &DebugG2Info(int handle)
+std::vector<CGhoul2Info> &DebugG2Info(int handle)
 {
 	return ((Ghoul2InfoArray *)(&TheGhoul2InfoArray()))->GetDebug(handle);
 }

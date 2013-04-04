@@ -13,8 +13,8 @@
 class FFHandleTable
 {
 public:
-	typedef vector<ChannelCompound> Vector;
-	typedef map<int, string> RegFail;
+	typedef std::vector<ChannelCompound> Vector;
+	typedef std::map<int, std::string> RegFail;
 protected:
 	Vector mVector;
 	RegFail mRegFail;
@@ -46,7 +46,7 @@ public:
 		return mVector[ InRange<int>( ff, 0, mVector.size() - 1, FF_HANDLE_NULL ) ];
 	}
 	qboolean GetFailedNames( TNameTable &NameTable );
-	qboolean GetChannels( vector<int> &channels );
+	qboolean GetChannels( std::vector<int> &channels );
 	ffHandle_t Convert( ChannelCompound &compound, const char *name, qboolean create );
 	ffHandle_t Convert( ChannelCompound &compound );
 	const char *GetName( ffHandle_t ff );

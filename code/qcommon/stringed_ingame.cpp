@@ -33,8 +33,8 @@
 #include <vector>
 ;
 
-typedef vector<string>	vStrings_t;
-typedef vector<int>		vInts_t;
+typedef std::vector<std::string>	vStrings_t;
+typedef std::vector<int>		vInts_t;
 //
 ///////////////////////////////////////////////
 
@@ -47,8 +47,8 @@ cvar_t  *sp_leet = NULL;	// kept as 'sp_' for JK2 compat.
 
 typedef struct SE_Entry_s
 {
-	string		m_strString;
-	string		m_strDebug;	// english and/or "#same", used for debugging only. Also prefixed by "SE:" to show which strings go through StringEd (ie aren't hardwired)
+	std::string		m_strString;
+	std::string		m_strDebug;	// english and/or "#same", used for debugging only. Also prefixed by "SE:" to show which strings go through StringEd (ie aren't hardwired)
 	int			m_iFlags;
 
 	SE_Entry_s()
@@ -59,17 +59,17 @@ typedef struct SE_Entry_s
 } SE_Entry_t;
 
 
-typedef map <string, SE_Entry_t> mapStringEntries_t;
+typedef std::map <std::string, SE_Entry_t> mapStringEntries_t;
 
 class CStringEdPackage
 {
 private:
 
 	SE_BOOL				m_bEndMarkerFound_ParseOnly;
-	string				m_strCurrentEntryRef_ParseOnly;
-	string				m_strCurrentEntryEnglish_ParseOnly;
-	string				m_strCurrentFileRef_ParseOnly;
-	string				m_strLoadingLanguage_ParseOnly;	// eg "german"
+	std::string				m_strCurrentEntryRef_ParseOnly;
+	std::string				m_strCurrentEntryEnglish_ParseOnly;
+	std::string				m_strCurrentFileRef_ParseOnly;
+	std::string				m_strLoadingLanguage_ParseOnly;	// eg "german"
 	SE_BOOL				m_bLoadingEnglish_ParseOnly;
 
 public:
@@ -89,8 +89,8 @@ public:
 	//
 	// flag stuff...
 	//
-	vector <string>		m_vstrFlagNames;
-	map	<string,int>	m_mapFlagMasks;
+	std::vector <std::string>		m_vstrFlagNames;
+	std::map	<std::string,int>	m_mapFlagMasks;
 
 	void	Clear( SE_BOOL bChangingLanguages );
 	void	SetupNewFileParse( LPCSTR psFileName, SE_BOOL bLoadDebug );
@@ -274,7 +274,7 @@ SE_BOOL CStringEdPackage::CheckLineForKeyword( LPCSTR psKeyword, LPCSTR &psLine)
 //
 LPCSTR CStringEdPackage::ConvertCRLiterals_Read( LPCSTR psString )
 {
-	static string str;
+	static std::string str;
 	str = psString;
 	int iLoc;
 	while ( (iLoc = str.find("\\n")) != -1 )
@@ -390,7 +390,7 @@ LPCSTR CStringEdPackage::InsideQuotes( LPCSTR psLine )
 	// I *could* replace this string object with a declared array, but wasn't sure how big to leave it, and it'd have to
 	//	be static as well, hence permanent. (problem on consoles?)
 	//
-	static	string	str;
+	static	std::string	str;
 					str = "";	// do NOT join to above line
 
 	// skip any leading whitespace...
@@ -440,7 +440,7 @@ LPCSTR CStringEdPackage::InsideQuotes( LPCSTR psLine )
 //
 int CStringEdPackage::GetFlagMask( LPCSTR psFlagName )
 {
-	map <string, int>::iterator itFlag = m_mapFlagMasks.find( psFlagName );
+	std::map <std::string, int>::iterator itFlag = m_mapFlagMasks.find( psFlagName );
 	if ( itFlag != m_mapFlagMasks.end() )
 	{
 		int &iMask = (*itFlag).second;
@@ -751,7 +751,7 @@ void CStringEdPackage::AddEntry( LPCSTR psLocalReference )
 
 LPCSTR Leetify( LPCSTR psString )
 {
-	static string str;
+	static std::string str;
 	str = psString;
 	if (sp_leet->integer == 42)	// very specific test, so you won't hit it accidentally
 	{
@@ -763,7 +763,7 @@ LPCSTR Leetify( LPCSTR psString )
 		char *p;
 		for (int i=0; i<sizeof(cReplace); i+=2)
 		{
-			while ((p=strchr(str.c_str(),cReplace[i]))!=NULL)
+			while ((p=const_cast<char*>(strchr(str.c_str(),cReplace[i])))!=NULL)
 				*p = cReplace[i+1];
 		}
 	}
@@ -872,7 +872,7 @@ static LPCSTR SE_Load_Actual( LPCSTR psFileName, SE_BOOL bLoadDebug, SE_BOOL bSp
 	return psErrorMessage;
 }
 
-static LPCSTR SE_GetFoundFile( string &strResult )
+static LPCSTR SE_GetFoundFile( std::string &strResult )
 {
 	static char sTemp[1024/*MAX_PATH*/];
 
@@ -1068,12 +1068,12 @@ int SE_GetFlagMask( LPCSTR psFlagName )
 // Groan, except for Bob. I mentioned that this was slow and only call it once, but he's calling it from 
 //	every level-load...  Ok, cacheing it is...
 //
-vector <string> gvLanguagesAvailable;
+std::vector <std::string> gvLanguagesAvailable;
 int SE_GetNumLanguages(void)
 {
 	if ( gvLanguagesAvailable.empty() )
 	{
-		string strResults;
+		std::string strResults;
 		/*int iFilesFound = */SE_BuildFileList( 
 												#ifdef _STRINGED
 													va("C:\\Source\\Tools\\StringEd\\test_data\\%s",sSE_STRINGS_DIR)
@@ -1083,7 +1083,7 @@ int SE_GetNumLanguages(void)
 												, strResults 
 											);
 
-		set<string> strUniqueStrings;	// laziness <g>
+		std::set<std::string> strUniqueStrings;	// laziness <g>
 		LPCSTR p;
 		while ((p=SE_GetFoundFile (strResults)) != NULL)
 		{
@@ -1213,7 +1213,7 @@ LPCSTR SE_LoadLanguage( LPCSTR psLanguage, SE_BOOL bLoadDebug /* = SE_TRUE */ )
 	{
 		SE_NewLanguage();
 
-		string strResults;
+		std::string strResults;
 		/*int iFilesFound = */SE_BuildFileList( 
 												#ifdef _STRINGED
 													va("C:\\Source\\Tools\\StringEd\\test_data\\%s",sSE_STRINGS_DIR)

@@ -214,7 +214,7 @@ public:
 								  const float beddepth = 0.0f, 
 								  const float deviation = 0.25f, 
 								  const float breadth = 7,
-								  string bridge_name = "");
+								  std::string bridge_name = "");
 
 	void		GeneratePaths	( symmetry_t symmetric = SYMMETRY_NONE );
 	void		GenerateRivers  ( );

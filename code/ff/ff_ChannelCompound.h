@@ -59,6 +59,6 @@ public:
 	}
 };
 
-typedef vector<ChannelCompound> THandleTable;
+typedef std::vector<ChannelCompound> THandleTable;
 
 #endif // FF_CHANNELCOMPOUND_H

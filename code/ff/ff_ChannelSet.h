@@ -16,7 +16,7 @@
 class FFChannelSet : public FFMultiSet
 {
 public:
-	typedef multimap<int, int> Channel;
+	typedef std::multimap<int, int> Channel;
 protected:
 	Channel mChannel;
 	qboolean ParseChannels( const char *channels );

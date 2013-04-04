@@ -241,7 +241,10 @@ typedef struct {
 	int			(*g2hilev_SetAnim)(CGhoul2Info *ghlInfo, const char *boneName, int animNum, const qboolean freeze);
 
 #ifdef _IMMERSION
-	ffHandle_t	(*registerForce)(const char *name, int channel/*=FF_CHANNEL_MENU*/);
+	ffHandle_t	(*registerForce_)(const char *name, int channel/*=FF_CHANNEL_MENU*/);
+	inline ffHandle_t	registerForce(const char *name, int channel=FF_CHANNEL_MENU) {
+		return registerForce_(name, channel);
+	}
 	void		(*startForce)(ffHandle_t ff);
 #endif // _IMMERSION
 

@@ -167,7 +167,7 @@ public:
 };
 
 // Fancy comparator
-struct SndForceLess : public less<SndForce>
+struct SndForceLess : public std::less<SndForce>
 {
 	bool operator() ( const SndForce &x, const SndForce &y )
 	{
@@ -206,8 +206,8 @@ public:
 class SndForceSet
 {
 public:
-	typedef set<SndForce, SndForceLess> PendingSet;
-	typedef map<ffHandle_t, SndForce> ActiveSet;
+	typedef std::set<SndForce, SndForceLess> PendingSet;
+	typedef std::map<ffHandle_t, SndForce> ActiveSet;
 	ActiveSet mActive;
 	PendingSet mPending;
 public:
@@ -231,8 +231,8 @@ public:
 class LoopForceSet 
 {
 public:
-	typedef set<LoopForce, SndForceLess> PendingSet;
-	typedef map<ffHandle_t, LoopForce> ActiveSet;
+	typedef std::set<LoopForce, SndForceLess> PendingSet;
+	typedef std::map<ffHandle_t, LoopForce> ActiveSet;
 	ActiveSet mActive;
 	PendingSet mPending;
 public:

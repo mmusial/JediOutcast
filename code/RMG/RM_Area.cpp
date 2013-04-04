@@ -10,9 +10,6 @@
 
 #include "rm_headers.h"
 
-#ifdef _WIN32
-#pragma optimize("p", on)
-#endif
 
 /************************************************************************************************
  * CRMArea::CRMArea
@@ -475,6 +472,3 @@ CRMArea* CRMAreaManager::EnumArea ( const int index )
 	return mAreas[index];
 }
 
-#ifdef _WIN32
-#pragma optimize("p", off)
-#endif

@@ -2557,7 +2557,7 @@ void _UI_Init( qboolean inGameLoad )
 	uiInfo.uiDC.feederItemImage		= &UI_FeederItemImage;
 	uiInfo.uiDC.feederItemText		= &UI_FeederItemText;
 #ifdef _IMMERSION
-	uiInfo.uiDC.registerForce		= &trap_FF_Register;
+	uiInfo.uiDC.registerForce_		= &trap_FF_Register;
 	uiInfo.uiDC.startForce			= &trap_FF_Start;
 #endif // _IMMERSION
 	uiInfo.uiDC.ownerDrawHandleKey	= &UI_OwnerDrawHandleKey;

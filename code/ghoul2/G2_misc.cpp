@@ -37,8 +37,8 @@
 static int CurrentTag=GORE_TAG_UPPER+1;
 static int CurrentTagUpper=GORE_TAG_UPPER;
 
-static map<int,GoreTextureCoordinates> GoreRecords;
-static map<pair<int,int>,int> GoreTagsTemp; // this is a surface index to gore tag map used only 
+static std::map<int,GoreTextureCoordinates> GoreRecords;
+static std::map<std::pair<int,int>,int> GoreTagsTemp; // this is a surface index to gore tag map used only 
 								  // temporarily during the generation phase so we reuse gore tags per LOD
 int goreModelIndex;
 
@@ -65,7 +65,7 @@ int AllocGoreRecord()
 	while (GoreRecords.size()>MAX_GORE_RECORDS)
 	{
 		int tagHigh=(*GoreRecords.begin()).first&GORE_TAG_MASK;
-		map<int,GoreTextureCoordinates>::iterator it;
+		std::map<int,GoreTextureCoordinates>::iterator it;
 		GoreTextureCoordinates *gTC;
 
 		it = GoreRecords.begin();
@@ -107,7 +107,7 @@ void ResetGoreTag()
 
 GoreTextureCoordinates *FindGoreRecord(int tag)
 {
-	map<int,GoreTextureCoordinates>::iterator i=GoreRecords.find(tag);
+	std::map<int,GoreTextureCoordinates>::iterator i=GoreRecords.find(tag);
 	if (i!=GoreRecords.end())
 	{
 		return &(*i).second;
@@ -127,11 +127,11 @@ void DeleteGoreRecord(int tag)
 }
 
 static int CurrentGoreSet=1; // this is a UUID for gore sets
-static map<int,CGoreSet *> GoreSets; // map from uuid to goreset
+static std::map<int,CGoreSet *> GoreSets; // map from uuid to goreset
 
 CGoreSet *FindGoreSet(int goreSetTag)
 {
-	map<int,CGoreSet *>::iterator f=GoreSets.find(goreSetTag);
+	std::map<int,CGoreSet *>::iterator f=GoreSets.find(goreSetTag);
 	if (f!=GoreSets.end())
 	{
 		return (*f).second;
@@ -149,7 +149,7 @@ CGoreSet *NewGoreSet()
 
 void DeleteGoreSet(int goreSetTag)
 {
-	map<int,CGoreSet *>::iterator f=GoreSets.find(goreSetTag);
+	std::map<int,CGoreSet *>::iterator f=GoreSets.find(goreSetTag);
 	if (f!=GoreSets.end())
 	{
 		if ( (*f).second->mRefCount == 0 || (*f).second->mRefCount - 1 == 0 )
@@ -167,7 +167,7 @@ void DeleteGoreSet(int goreSetTag)
 
 CGoreSet::~CGoreSet()
 {
-	multimap<int,SGoreSurface>::iterator i;
+	std::multimap<int,SGoreSurface>::iterator i;
 	for (i=mGoreRecords.begin();i!=mGoreRecords.end();i++)
 	{
 		DeleteGoreRecord((*i).second.mGoreTag);
@@ -976,7 +976,7 @@ static void G2_GorePolys( const mdxmSurface_t *surface, CTraceSurface &TS, const
 	}
 
 	int newTag;
-	map<pair<int,int>,int>::iterator f=GoreTagsTemp.find(pair<int,int>(goreModelIndex,TS.surfaceNum));
+	std::map<std::pair<int,int>,int>::iterator f=GoreTagsTemp.find(std::pair<int,int>(goreModelIndex,TS.surfaceNum));
 	if (f==GoreTagsTemp.end()) // need to generate a record
 	{
 		newTag=AllocGoreRecord();
@@ -1016,8 +1016,8 @@ static void G2_GorePolys( const mdxmSurface_t *surface, CTraceSurface &TS, const
 		add.mGoreGrowFactor = ( 1.0f - TS.gore->goreScaleStartFraction) / (float)(TS.gore->growDuration);	//curscale = (curtime-mGoreGrowStartTime)*mGoreGrowFactor;
 		add.mGoreGrowOffset = TS.gore->goreScaleStartFraction;	
 
-		goreSet->mGoreRecords.insert(pair<int,SGoreSurface>(TS.surfaceNum,add));
-		GoreTagsTemp[pair<int,int>(goreModelIndex,TS.surfaceNum)]=newTag;
+		goreSet->mGoreRecords.insert(std::pair<int,SGoreSurface>(TS.surfaceNum,add));
+		GoreTagsTemp[std::pair<int,int>(goreModelIndex,TS.surfaceNum)]=newTag;
 	}
 	else
 	{
@@ -1119,7 +1119,8 @@ static bool G2_TracePolys(const mdxmSurface_t *surface, const mdxmSurfHierarchy_
 		// did we hit it?
 		if (G2_SegmentTriangleTest(TS.rayStart, TS.rayEnd, point1, point2, point3, qtrue, qtrue, hitPoint, normal, &face))
 		{	// find space in the collision records for this record
-			for (int i=0; i<MAX_G2_COLLISIONS;i++)
+			int i=0;
+			for (; i<MAX_G2_COLLISIONS;i++)
 			{
 				if (TS.collRecMap[i].mEntityNum == -1)
 				{
@@ -1351,7 +1352,8 @@ static bool G2_RadiusTracePolys(
 		{
 			// we hit a triangle, so init a collision record...
 			//
-			for (int i=0; i<MAX_G2_COLLISIONS;i++)
+			int i=0;
+			for (; i<MAX_G2_COLLISIONS;i++)
 			{
 				if (TS.collRecMap[i].mEntityNum == -1)
 				{
@@ -1791,7 +1793,7 @@ void G2_SaveGhoul2Models(CGhoul2Info_v &ghoul2)
 	*(int *)tempBuffer = ghoul2.size();
 	tempBuffer +=4;
 
-	for (i=0; i<ghoul2.size();i++)
+	for (int i=0; i<ghoul2.size();i++)
 	{
 		// first save out the ghoul2 details themselves
 //		OutputDebugString(va("G2_SaveGhoul2Models(): ghoul2[%d].mModelindex = %d\n",i,ghoul2[i].mModelindex));
@@ -1814,7 +1816,7 @@ void G2_SaveGhoul2Models(CGhoul2Info_v &ghoul2)
 		tempBuffer +=4;
 
 		// now save the all the bone list info
-		for (x=0; x<ghoul2[i].mBlist.size(); x++)
+		for (int x=0; x<ghoul2[i].mBlist.size(); x++)
 		{
 			memcpy(tempBuffer, &ghoul2[i].mBlist[x], BONE_SAVE_BLOCK_SIZE);
 			tempBuffer += BONE_SAVE_BLOCK_SIZE;
@@ -1825,7 +1827,7 @@ void G2_SaveGhoul2Models(CGhoul2Info_v &ghoul2)
 		tempBuffer +=4;
 
 		// lastly save the all the bolt list info
-		for (x=0; x<ghoul2[i].mBltlist.size(); x++)
+		for (int x=0; x<ghoul2[i].mBltlist.size(); x++)
 		{
 			memcpy(tempBuffer, &ghoul2[i].mBltlist[x], BOLT_SAVE_BLOCK_SIZE);
 			tempBuffer += BOLT_SAVE_BLOCK_SIZE;
@@ -1839,8 +1841,8 @@ void G2_SaveGhoul2Models(CGhoul2Info_v &ghoul2)
 int G2_FindConfigStringSpace(char *name, int start, int max)
 {
 	char	s[MAX_STRING_CHARS];
-
-	for (int  i=1 ; i<max ; i++ ) 
+	int  i=1;
+	for ( ; i<max ; i++ ) 
 	{
 		SV_GetConfigstring( start + i, s, sizeof( s ) );
 		if ( !s[0] ) 
@@ -1907,7 +1909,7 @@ void G2_LoadGhoul2Model(CGhoul2Info_v &ghoul2, char *buffer)
 		buffer +=4;
 
 		// now load all the bones
-		for (x=0; x<ghoul2[i].mBlist.size(); x++)
+		for (int x=0; x<ghoul2[i].mBlist.size(); x++)
 		{
 			memcpy(&ghoul2[i].mBlist[x], buffer, BONE_SAVE_BLOCK_SIZE);
 			buffer += BONE_SAVE_BLOCK_SIZE;
@@ -1918,7 +1920,7 @@ void G2_LoadGhoul2Model(CGhoul2Info_v &ghoul2, char *buffer)
 		buffer +=4;
 
 		// now load all the bolts
-		for (x=0; x<ghoul2[i].mBltlist.size(); x++)
+		for (int x=0; x<ghoul2[i].mBltlist.size(); x++)
 		{
 			memcpy(&ghoul2[i].mBltlist[x], buffer, BOLT_SAVE_BLOCK_SIZE);
 			buffer += BOLT_SAVE_BLOCK_SIZE;

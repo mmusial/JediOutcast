@@ -352,7 +352,7 @@ bool CRMMission::ParseRivers ( CGPGroup* group )
 	float		minwidth;
 	float		maxwidth;
 	int			points;
-	string		bridge_name;
+	std::string		bridge_name;
 
 	maxdepth  = atoi ( group->FindPairValue ( "maxpathdepth", "5" ) );
 	points    = atoi ( group->FindPairValue ( "points", "10" ) );
@@ -1400,7 +1400,7 @@ bool CRMMission::Load ( const char* mission, const char* instances, const char* 
 //	Cvar_Set("ar_obj_maincom0", "&OBJECTIVES_INPROGRESS&", CVAR_OBJECTIVE);
 //	Cvar_SetValue ("ar_cur_objective", 0, CVAR_OBJECTIVE);
 
-	string mInfo = root->FindPairValue ( "info", "<MISSION ADDITIONAL INFO MISSING>" );
+	std::string mInfo = root->FindPairValue ( "info", "<MISSION ADDITIONAL INFO MISSING>" );
 //	Cvar_Set("ar_obj_info0",mInfo.c_str(), CVAR_OBJECTIVE);
 
 	mExitScreen = root->FindPairValue ( "exitScreen", "<EXIT SCREEN MISSING>" );

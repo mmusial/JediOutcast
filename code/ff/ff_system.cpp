@@ -19,7 +19,7 @@ qboolean FFSystem::Init( const char *channels )
 	// kludgy restart mechanism
 	typedef struct
 	{	TNameTable name;
-		vector<int> channel;
+		std::vector<int> channel;
 	}	TRestartInfo;
 	TRestartInfo restart;
 

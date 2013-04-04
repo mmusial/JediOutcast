@@ -13,7 +13,7 @@
 class MultiCompound
 {
 public:
-	typedef set<MultiEffect*> Set;
+	typedef std::set<MultiEffect*> Set;
 protected:
 	Set mSet;
 public:

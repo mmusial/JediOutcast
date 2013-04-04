@@ -8,11 +8,11 @@
 class FFConfigParser
 {
 public:
-	typedef vector<string> TInclude;
-	typedef set<string> TDevice;
-	typedef map<int, string> TDeviceType;
-	typedef map<int, TDeviceType> TTechType;
-	typedef vector<int> TDefaultPriority;
+	typedef std::vector<std::string> TInclude;
+	typedef std::set<std::string> TDevice;
+	typedef std::map<int, std::string> TDeviceType;
+	typedef std::map<int, TDeviceType> TTechType;
+	typedef std::vector<int> TDefaultPriority;
 
 	typedef struct
 	{
@@ -20,7 +20,7 @@ public:
 		TDevice device;
 	} TData;
 
-	typedef map<string, TData> TMap;
+	typedef std::map<std::string, TData> TMap;
 
 protected:
 	TTechType mDefaultSet;

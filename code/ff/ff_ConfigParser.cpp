@@ -115,7 +115,7 @@ qboolean FFConfigParser::ParseDefault( const char **pos, TDeviceType &defaultSet
 
 				if ( sscanf( token, "%d", &device ) )
 				{
-					string &str = defaultSet[ device ];
+					std::string &str = defaultSet[ device ];
 					if ( !str.size() )
 					{
 						str = COM_ParseExt( pos, qfalse );
@@ -367,7 +367,7 @@ qboolean FFConfigParser::ParseSet( const char **pos, TData &data )
 qboolean FFConfigParser::ParseSets( const char **pos )
 {
 	qboolean result = qboolean( pos != NULL );
-	string			groupName;
+	std::string			groupName;
 
 	if ( pos )
 	{

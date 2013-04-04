@@ -77,9 +77,9 @@ SBCSOverrideLanguages_t g_SBCSOverrideLanguages[]=
 
 struct ThaiCodes_t
 {
-	map <int, int>	m_mapValidCodes;
-	vector<int>		m_viGlyphWidths;	
-	string			m_strInitFailureReason;	// so we don't have to keep retrying to work this out
+	std::map <int, int>	m_mapValidCodes;
+	std::vector<int>		m_viGlyphWidths;	
+	std::string			m_strInitFailureReason;	// so we don't have to keep retrying to work this out
 
 	void Clear( void )
 	{
@@ -97,7 +97,7 @@ struct ThaiCodes_t
 	//
 	int GetValidIndex( int iCode )
 	{
-		map <int,int>::iterator it = m_mapValidCodes.find( iCode );
+		std::map <int,int>::iterator it = m_mapValidCodes.find( iCode );
 		if (it != m_mapValidCodes.end())
 		{
             return (*it).second;
@@ -244,8 +244,8 @@ float RoundTenth( float fValue )
 
 
 int							g_iCurrentFontIndex;	// entry 0 is reserved index for missing/invalid, else ++ with each new font registered
-vector<CFontInfo *>			g_vFontArray;
-typedef map<sstring_t, int>	FontIndexMap_t;
+std::vector<CFontInfo *>			g_vFontArray;
+typedef std::map<sstring_t, int>	FontIndexMap_t;
 							FontIndexMap_t g_mapFontIndexes;
 int g_iNonScaledCharRange;	// this is used with auto-scaling of asian fonts, anything below this number is preserved in scale, anything above is scaled down by 0.75f
 
@@ -590,7 +590,8 @@ static int Thai_ValidTISCode( const byte *psString, int &iThaiBytes )
 
 		// thai codes can be up to 3 bytes long, so see how high we can get...
 		//
-		for (int i=0; i<3; i++)
+		int i=0;
+		for (; i<3; i++)
 		{			
 			CodeToTry.sChars[i] = psString[i];
 
@@ -1667,11 +1668,12 @@ void R_ReloadFonts_f(void)
 {
 	// first, grab all the currently-registered fonts IN THE ORDER THEY WERE REGISTERED...
 	//
-	vector <sstring_t> vstrFonts;
-
-	for (int iFontToFind = 1; iFontToFind < g_iCurrentFontIndex; iFontToFind++)
+	std::vector <sstring_t> vstrFonts;
+	int iFontToFind = 1;
+	for (; iFontToFind < g_iCurrentFontIndex; iFontToFind++)
 	{		
-		for (FontIndexMap_t::iterator it = g_mapFontIndexes.begin(); it != g_mapFontIndexes.end(); ++it)
+		FontIndexMap_t::iterator it = g_mapFontIndexes.begin();
+		for (; it != g_mapFontIndexes.end(); ++it)
 		{
 			if (iFontToFind == (*it).second)
 			{

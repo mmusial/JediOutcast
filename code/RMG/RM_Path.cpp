@@ -503,7 +503,7 @@ void CRMPathManager::SetRiverStyle (const int   depth,
 									const float beddepth, 
 									const float deviation, 
 									const float breadth,
-									string bridge_name)
+									std::string bridge_name)
 {
 	// save river style
 	mRiverDepth    = depth;

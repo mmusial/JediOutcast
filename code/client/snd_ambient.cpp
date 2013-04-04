@@ -76,8 +76,8 @@ static const char	*keywordNames[NUM_AS_KEYWORDS]=
 
 CSetGroup::CSetGroup(void)
 {
-	m_ambientSets = new vector<ambientSet_t*>;
-	m_setMap = new map<sstring_t, ambientSet_t*>;
+	m_ambientSets = new std::vector<ambientSet_t*>;
+	m_setMap = new std::map<sstring_t, ambientSet_t*>;
 }
 
 
@@ -97,9 +97,9 @@ Free
 
 void CSetGroup::Free( void )
 {
-	vector<ambientSet_t *>::iterator	ai;
+	std::vector<ambientSet_t *>::iterator	ai;
 
-	for ( ai = m_ambientSets->begin(); ai != m_ambientSets->end(); ai++ )
+	for (auto ai = m_ambientSets->begin(); ai != m_ambientSets->end(); ai++ )
 	{
 		Z_Free ( (*ai) );
 	}
@@ -107,8 +107,8 @@ void CSetGroup::Free( void )
 	//Do this in place of clear() so it *really* frees the memory.
 	delete m_ambientSets;
 	delete m_setMap;
-	m_ambientSets = new vector<ambientSet_t*>;
-	m_setMap = new map<sstring_t, ambientSet_t*>;
+	m_ambientSets = new std::vector<ambientSet_t*>;
+	m_setMap = new std::map<sstring_t, ambientSet_t*>;
 
 	m_numSets = 0;
 }

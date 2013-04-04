@@ -14,7 +14,7 @@
 class FFMultiSet
 {
 public:
-	typedef vector<FFSet*> Set;
+	typedef std::vector<FFSet*> Set;
 protected:
 	FFConfigParser *mConfig;
 	Set mSet;
