@@ -364,7 +364,7 @@ static char *StripTrailingWhiteSpaceOnEveryLine(char *pText)
 #ifdef _XBOX
 	Z_SetNewDeleteTemporary(true);
 #endif
-	string strNewText;
+	std::string strNewText;
 
 	while (*pText)
 	{
