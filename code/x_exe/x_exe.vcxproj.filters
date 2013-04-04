@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0484b9a4-2b7a-4883-930b-42889281a0bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\EAX">
+      <UniqueIdentifier>{53033421-f8bc-4ec8-8d3e-142e5ee038cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenAL">
+      <UniqueIdentifier>{202983b1-1221-40cf-940c-0f5e213d28c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zlib32">
+      <UniqueIdentifier>{4de5aa3c-1f5a-4e54-8388-7f2ecabd8e74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7c26627d-1083-47cd-9bf2-6c5f1949c61b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ghoul2">
+      <UniqueIdentifier>{f45dd769-6131-4c07-af27-5cee4858a61b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer Source">
+      <UniqueIdentifier>{7a8d76a8-19f5-4544-9489-ea850390059b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer Source\Renderer Headers">
+      <UniqueIdentifier>{40dd0b3d-68ab-465b-a77b-66c161a6b9ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer Source\x_shaders">
+      <UniqueIdentifier>{ea5c889f-0476-4d46-a007-8dc0f49610ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI Source">
+      <UniqueIdentifier>{2d9cd171-f1ab-4cda-91b7-75d7ed7308e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI Source\UI Headers">
+      <UniqueIdentifier>{45b4c4fa-87b6-481f-bcb6-2f4d20120680}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\client\BinkVideo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_cgame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_cin_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_input_hotswap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_keys.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_parse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_scrn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\cl_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\cm_load_xbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\cm_patch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\cm_polylib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\cm_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\cm_trace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\cmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\cvar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\dbg_console_xbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ff\ff_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\files_common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\files_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\genericparser2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\md4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\msg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\net_chan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\q_math.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\q_shared.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\snd_ambient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\snd_dma_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\snd_mem_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\snd_music.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\stringed_ingame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\stringed_interface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server\sv_ccmds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server\sv_client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server\sv_game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server\sv_init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server\sv_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server\sv_savegame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server\sv_snapshot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server\sv_world.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\client\vmachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_file_xbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_filecode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_input_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_input_rumble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_input_xbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_main_common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_main_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_qal_xbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_shared.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_stream_dx8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\qcommon\z_memman_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\zlib32\deflate.cpp">
+      <Filter>zlib32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\zlib32\inflate.cpp">
+      <Filter>zlib32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\zlib32\zipcommon.cpp">
+      <Filter>zlib32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ghoul2\G2_API.cpp">
+      <Filter>Ghoul2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ghoul2\G2_bolts.cpp">
+      <Filter>Ghoul2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ghoul2\G2_bones.cpp">
+      <Filter>Ghoul2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ghoul2\G2_misc.cpp">
+      <Filter>Ghoul2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ghoul2\G2_surfaces.cpp">
+      <Filter>Ghoul2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\matcomp.c">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_WorldEffects.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_backend.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_bsp_xbox.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_cmds.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_curve.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_draw.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_font.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_ghoul2.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_image.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_init.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_light.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_lightmanager.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_main.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_marks.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_mesh.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_model.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_noise.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_quicksprite.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_scene.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_shade.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_shade_calc.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_shader.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_shadows.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_sky.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_stl.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_surface.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_surfacesprites.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\renderer\tr_world.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_gamma_console.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_glimp_console.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_highdynamicrange.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_lighteffects.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_qgl_dx8.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_stencilshadow.cpp">
+      <Filter>Renderer Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ui\ui_atoms.cpp">
+      <Filter>UI Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ui\ui_connect.cpp">
+      <Filter>UI Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ui\ui_debug.cpp">
+      <Filter>UI Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ui\ui_main.cpp">
+      <Filter>UI Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ui\ui_saber.cpp">
+      <Filter>UI Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ui\ui_shared.cpp">
+      <Filter>UI Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ui\ui_splash.cpp">
+      <Filter>UI Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ui\ui_syscalls.cpp">
+      <Filter>UI Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\client\BinkVideo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\dbg_console_xbox.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\eax\EaxMan.h">
+      <Filter>Source Files\EAX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\eax\eax.h">
+      <Filter>Source Files\EAX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\OpenAL\al.h">
+      <Filter>Source Files\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\OpenAL\alc.h">
+      <Filter>Source Files\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\OpenAL\alctypes.h">
+      <Filter>Source Files\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\OpenAL\altypes.h">
+      <Filter>Source Files\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\OpenAL\alu.h">
+      <Filter>Source Files\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\OpenAL\alut.h">
+      <Filter>Source Files\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\zlib32\deflate.h">
+      <Filter>zlib32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\zlib32\inflate.h">
+      <Filter>zlib32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\zlib32\zip.h">
+      <Filter>zlib32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\anims.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\b_public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\bg_public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\bset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\bstate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cgame\cg_public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\chash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\cl_mp3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\client_ui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_draw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_landscape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_patch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_polylib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_randomterrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_terrainmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\common_headers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server\exe_headers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\fffx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\files.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\fixedmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\g_functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\g_items.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\g_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\g_nav.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\g_public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\g_shared.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\genericparser2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\hstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\keys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\q_shared.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\qfiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server\server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\snd_ambient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\snd_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\snd_music.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\snd_public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\sstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\statindex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\stringed_ingame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\stringed_interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\tags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\teams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\timing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\unzip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\vmachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\weapons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\win_file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\win_input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\win_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ghoul2\G2.h">
+      <Filter>Ghoul2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\MiniHeap.h">
+      <Filter>Ghoul2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ghoul2\ghoul2_gore.h">
+      <Filter>Ghoul2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\ghoul2_shared.h">
+      <Filter>Ghoul2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\matcomp.h">
+      <Filter>Ghoul2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\mdx_format.h">
+      <Filter>Ghoul2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\glext.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\glw_win_dx8.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\qgl.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\shader_constants.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_WorldEffects.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_font.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_jpeg_interface.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_landscape.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_lightmanager.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_local.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_public.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_quicksprite.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_stl.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\renderer\tr_types.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\win_highdynamicrange.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\win_lighteffects.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\win_stencilshadow.h">
+      <Filter>Renderer Source\Renderer Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cgame\animtable.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\channels.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ui\gameinfo.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\client\keycodes.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ui\menudef.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\qcommon.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\stv_version.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\surfaceflags.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ui\ui_local.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ui\ui_playerinfo.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ui\ui_public.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ui\ui_shared.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ui\ui_splash.h">
+      <Filter>UI Source\UI Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x_shaders\bump.psh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\bump.vsh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\dlight.psh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\dlight.vsh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\environment.vsh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\extracthot.psh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\hotblur.psh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\specular_dynamic.psh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\specular_dynamic.vsh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\specular_static.psh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+    <None Include="..\x_shaders\specular_static.vsh">
+      <Filter>Renderer Source\x_shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
